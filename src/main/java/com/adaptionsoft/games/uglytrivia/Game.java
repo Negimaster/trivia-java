@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Game {
+	public static final String SPORTS_CATEGORY = "Sports";
+	public static final String SCIENCE_CATEGORY = "Science";
+	public static final String POP_CATEGORY = "Pop";
+	public static final String ROCK_CATEGORY = "Rock";
 	ArrayList players = new ArrayList();
 	int[] places = new int[6];
 	int[] purses  = new int[6];
@@ -99,28 +103,28 @@ public class Game {
 	}
 
 	private void askQuestion() {
-		if (currentCategory() == "Pop")
+		if (currentCategory() == POP_CATEGORY)
 			System.out.println(popQuestions.removeFirst());
-		if (currentCategory() == "Science")
+		if (currentCategory() == SCIENCE_CATEGORY)
 			System.out.println(scienceQuestions.removeFirst());
-		if (currentCategory() == "Sports")
+		if (currentCategory() == SPORTS_CATEGORY)
 			System.out.println(sportsQuestions.removeFirst());
-		if (currentCategory() == "Rock")
+		if (currentCategory() == ROCK_CATEGORY)
 			System.out.println(rockQuestions.removeFirst());
 	}
 
 
 	private String currentCategory() {
-		if (places[currentPlayer] == 0) return "Pop";
-		if (places[currentPlayer] == 4) return "Pop";
-		if (places[currentPlayer] == 8) return "Pop";
-		if (places[currentPlayer] == 1) return "Science";
-		if (places[currentPlayer] == 5) return "Science";
-		if (places[currentPlayer] == 9) return "Science";
-		if (places[currentPlayer] == 2) return "Sports";
-		if (places[currentPlayer] == 6) return "Sports";
-		if (places[currentPlayer] == 10) return "Sports";
-		return "Rock";
+		if (places[currentPlayer] == 0) return POP_CATEGORY;
+		if (places[currentPlayer] == 4) return POP_CATEGORY;
+		if (places[currentPlayer] == 8) return POP_CATEGORY;
+		if (places[currentPlayer] == 1) return SCIENCE_CATEGORY;
+		if (places[currentPlayer] == 5) return SCIENCE_CATEGORY;
+		if (places[currentPlayer] == 9) return SCIENCE_CATEGORY;
+		if (places[currentPlayer] == 2) return SPORTS_CATEGORY;
+		if (places[currentPlayer] == 6) return SPORTS_CATEGORY;
+		if (places[currentPlayer] == 10) return SPORTS_CATEGORY;
+		return ROCK_CATEGORY;
 	}
 
 	public boolean wasCorrectlyAnswered() {
